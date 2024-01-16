@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Flight Search</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+.class{
+    text-align: center;
+}
+.headlinediv{
+    background-color: honeydew;
+}
+
+
+.maindiv {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    background-color: aqua;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#searchResults {
+    
+    
+    text-align: center;
+    width: 100%;
+}
+
+#searchheadlinebox{
+    display: flex;
+    width: 100%;
+    border: 2px solid black;
+}
+#searchshortname{
+    width: 80%;
+}
+#searchdate{
+    text-align: right;
+    border: 2px solid black;
+}
+#searchbox{
+    display: flex;
+    width :100%;
+    border: 2px solid black;
+    margin: 2px;
+}
+#imagesearchbox {
+            margin-left: auto;
+            text-align: center;
+            width : 30%
+
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            margin: 2px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 2px;
+        }
+#searchinfo{
+    float: left;
+    width : 70%;
+}
+
+</style>
+<body>
+    
+    
+    <div class="container">
+        <div class="headlinediv">
+            <h1 style="text-align: center;">Flight Search</h1>
+        </div>
+        <div class="maindiv">
+            <div class="formdiv">
+
+            
+            
+                <form id="flightSearchForm">
+                    <div class="radiobuttondiv">
+                        <input type="radio" id="oneWay" name="tripType" value="oneWay" checked>
+                        <label for="oneWay">One Way</label>
+
+                        <input type="radio" id="return" name="tripType" value="return">
+                        <label for="return">Return</label>
+
+                    </div>
+                    <label for="origin">Origin:</label>
+                    <input type="text" id="origin" name="origin" required>
+
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" name="destination" required>
+
+                    <label for="departureDate">Departure Date:</label>
+                    <input type="date" id="departureDate" name="departureDate" required>
+
+                    <label for="returnDate">Return Date:</label>
+                    <input type="date" id="returnDate" name="returnDate" disabled>
+
+                    
+
+                    
+
+                    <button type="button" onclick="searchFlights()">Search Flights</button>
+                </form>
+                <label for="priceRange">Price Range:</label>
+                <input type="range" id="priceRange" name="priceRange" min="0" max="1000" value="500" onchange="updateRangeValue()">
+                <p id="rangeValue">Selected Value: Rs 500</p>
+
+            </div>
+
+            <div id="searchResults">
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js" >
+        
+
+
+
+    </script>
+</body>
+</html>
